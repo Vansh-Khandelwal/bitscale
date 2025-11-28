@@ -5,7 +5,7 @@ type Props = {}
 
 export default function Tutorial({}: Props) {
   return (
-    <div className="tutorial-container w-full flex gap-4 justify-between">
+    <div className="tutorial-container w-full flex max-md:flex-col gap-4 justify-between">
       <TutorialLatest />
       <TutorialDemo />
     </div>

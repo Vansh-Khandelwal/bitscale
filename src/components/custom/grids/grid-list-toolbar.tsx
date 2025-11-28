@@ -16,12 +16,12 @@ type Props = {
 export default function GridListToolbar({ mygrids, starred, table }: Props) {
     return (
         <Tabs className="flex flex-col gap-4" defaultValue="mygrids">
-            <div className="grid-list-toolbar-container flex items-center gap-4 justify-between">
-                <TabsList className="flex w-1/4">
+            <div className="grid-list-toolbar-container flex max-sm:flex-col items-center gap-4 justify-between">
+                <TabsList className="flex max-sm:w-full w-1/4">
                     <TabsTrigger value="mygrids">My Grids</TabsTrigger>
                     <TabsTrigger value="starred">Starred</TabsTrigger>
                 </TabsList>
-                <div className="flex items-center justify-center py-4 gap-4 w-1/2">
+                <div className="flex max-[430px]:flex-col items-center justify-center py-4 gap-4 max-sm:w-full max-md:w-3/4 w-1/2">
                     <div className="search-container flex items-center gap-2 bg-gray-200 rounded-md p-2 w-full max-w-md">
                         <SearchIcon size="0.9rem"/>
                         <input
@@ -30,12 +30,12 @@ export default function GridListToolbar({ mygrids, starred, table }: Props) {
                             onChange={(event) =>
                                 table.getColumn("name")?.setFilterValue(event.target.value)
                             }
-                            className="w-3/4 outline-none text-sm"
+                            className="max-md:w-full w-3/4 outline-none text-sm"
                         />
                     </div>
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <Button variant="outline" className="ml-auto">
+                            <Button variant="outline" className="ml-auto max-[430px]:w-full">
                                 Edit Columns <ChevronDown className="h-4 w-4" />
                             </Button>
                         </DropdownMenuTrigger>

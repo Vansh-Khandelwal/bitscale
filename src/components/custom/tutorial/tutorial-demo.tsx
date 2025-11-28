@@ -7,7 +7,7 @@ type Props = {}
 
 export default function TutorialDemo ({}: Props) {
   return (
-    <Card className="w-1/2">
+    <Card className="max-md:w-full w-1/2">
         <CardHeader>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
             Complete Product Demo
@@ -19,7 +19,7 @@ export default function TutorialDemo ({}: Props) {
                 <Progress value={75} className="rounded-full h-1" />
                 75%
             </div>
-            <div className="steps-checklist grid justify-between grid-cols-2 text-sm">
+            <div className="steps-checklist grid justify-between grid-cols-2 max-md:text-[0.8rem] text-sm">
                 <div className="step-1 flex items-center gap-2 mb-2">
                     <Checkbox className="rounded" checked={true} />
                     <span className="step-label">Create your data list</span>

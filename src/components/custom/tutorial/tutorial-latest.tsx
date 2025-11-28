@@ -4,7 +4,7 @@ type Props = {}
 
 export default function TutorialLatest({ }: Props) {
     return (
-        <Card className="w-1/2 flex flex-col gap-4">
+        <Card className="max-md:w-full w-1/2 flex flex-col gap-4">
             <CardHeader>
                 <CardDescription>Latest from Bitscale</CardDescription>
             </CardHeader>

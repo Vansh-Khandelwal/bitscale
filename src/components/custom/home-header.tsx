@@ -9,12 +9,12 @@ type Props = {}
 export default function HomeHeader({ }: Props) {
     return (
         <div className="header-container flex flex-col gap-4">
-            <div className="main-header flex items-center justify-between mb-4">
-                <div className="welcome-container">
+            <div className="main-header flex max-md:flex-col gap-4 items-center justify-between mb-4">
+                <div className="welcome-container max-md:text-center">
                     <h1 className="font-semibold">Welcome Back, User!</h1>
                     <p className="text-sm text-muted-foreground">Here's yours daily scoop on Bitscale!</p>
                 </div>
-                <div className="main-actions-container flex gap-4">
+                <div className="main-actions-container flex max-sm:flex-col max-sm:w-full gap-4">
                     <Button variant="outline"><Building2Icon />Find Companies</Button>
                     <Dialog>
                         <DialogTrigger asChild>

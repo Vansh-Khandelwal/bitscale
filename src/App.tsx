@@ -1,5 +1,5 @@
 import './App.css'
-import { SidebarProvider } from './components/ui/sidebar'
+import { SidebarProvider, SidebarTrigger } from './components/ui/sidebar'
 import { AppSidebar } from './components/custom/sidebar/appSidebar'
 import Header from './components/custom/header'
 import Home from './pages/home'
@@ -8,7 +8,7 @@ function App() {
 
     return (
         <SidebarProvider className='overflow-hidden h-screen'>
-            <AppSidebar collapsible='none' />
+            <AppSidebar collapsible={screen.availWidth < 768 ? 'offcanvas': 'none'} />
             <div className="main-container w-full overflow-hidden">
                 <Header />
                 <Home />
