@@ -20,7 +20,7 @@ export default function HomeHeader({ }: Props) {
                         <DialogTrigger asChild>
                             <Button variant="outline"><UserIcon />Find People</Button>
                         </DialogTrigger>
-                        <DialogContent className="min-w-[75vw]">
+                        <DialogContent className="min-w-[75vw] max-h-[80vh]">
                             <FindPeople />
                         </DialogContent>
                     </Dialog>

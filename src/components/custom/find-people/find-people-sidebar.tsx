@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { Input } from '@/components/ui/input'
 import { ChevronDown, FileSearchCornerIcon, EyeIcon, UserPlusIcon, SearchIcon } from 'lucide-react'
+import FilterAccordion from './filter-accordion'
 
 type Props = {}
 
@@ -19,7 +20,7 @@ export default function FindPeopleSidebar({ }: Props) {
                     </DropdownMenuContent>
                 </DropdownMenu>
             </div>
-            <div className="sidebar-content flex flex-col gap-4">
+            <div className="sidebar-content flex flex-col gap-4 overflow-hidden">
                 <div className="search-container flex flex-col gap-3">
                     <div className="label flex items-center gap-2 text-xs">
                         <UserPlusIcon size="1rem"/> People Keyword
@@ -29,8 +30,8 @@ export default function FindPeopleSidebar({ }: Props) {
                         <input type="text" placeholder="Enter single keyword here..." className="outline-none text-sm"/>
                     </div>
                 </div>
-                <div className="filter-container">
-                    
+                <div className="filter-container overflow-y-hidden overflow-x-hidden">
+                    <FilterAccordion />
                 </div>
             </div>
             <div className="sidebar-footer flex gap-2 mt-6">

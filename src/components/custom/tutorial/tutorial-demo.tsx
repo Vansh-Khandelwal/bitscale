@@ -33,7 +33,7 @@ export default function TutorialDemo ({}: Props) {
                     <span className="step-label">Connect an integration</span>
                 </div>
                 <div className="step-1 flex items-center gap-2 mb-2">
-                    <Checkbox className="rounded" checked={true} />
+                    <Checkbox className="rounded" checked={false} />
                     <span className="step-label">Customise waterfall providers</span>
                 </div>
             </div>

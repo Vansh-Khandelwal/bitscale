@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge"
 import { SearchIcon, UnlockIcon } from "lucide-react"
 import FindPeopleSidebar from "./find-people-sidebar"
+import Empty from "../empty"
 
 type Props = {}
 
@@ -16,6 +17,7 @@ export default function FindPeople({}: Props) {
                     <span className="flex items-center gap-1"><UnlockIcon size="0.75rem"/> Unlock 100,000 leads with Enterprise Plan*</span>
                 </div>
             </div>
+            <Empty />
         </div>
     </div>
   )

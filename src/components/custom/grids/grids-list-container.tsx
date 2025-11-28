@@ -13,21 +13,22 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 type Props = {}
 
 const data: GridInfo[] = [
-    { id: "1", name: "grid one", editedBy: "Alice", lastEdited: "2024-06-01" },
-    { id: "2", name: "grid two", editedBy: "Bob", lastEdited: "2024-06-02" },
-    { id: "3", name: "grid three", editedBy: "Charlie", lastEdited: "2024-06-03" },
-    { id: "4", name: "grid four", editedBy: "Diana", lastEdited: "2024-06-04" },
-    { id: "5", name: "grid five", editedBy: "Eve", lastEdited: "2024-06-05" },
-    { id: "6", name: "grid six", editedBy: "Frank", lastEdited: "2024-06-06" },
-    { id: "7", name: "grid seven", editedBy: "Grace", lastEdited: "2024-06-07" },
-    { id: "8", name: "grid eight", editedBy: "Hank", lastEdited: "2024-06-08" },
-    { id: "9", name: "grid nine", editedBy: "Ivy", lastEdited: "2024-06-09" },
-    { id: "10", name: "grid ten", editedBy: "Jack", lastEdited: "2024-06-10" },
+    { id: "1", name: "grid one", description: "This is grid one",editedBy: "Alice", lastEdited: "2024-06-01" },
+    { id: "2", name: "grid two", description: "This is grid two", editedBy: "Bob", lastEdited: "2024-06-02" },
+    { id: "3", name: "grid three", description: "This is grid three", editedBy: "Charlie", lastEdited: "2024-06-03" },
+    { id: "4", name: "grid four", description: "This is grid four", editedBy: "Diana", lastEdited: "2024-06-04" },
+    { id: "5", name: "grid five", description: "This is grid five", editedBy: "Eve", lastEdited: "2024-06-05" },
+    { id: "6", name: "grid six", description: "This is grid six", editedBy: "Frank", lastEdited: "2024-06-06" },
+    { id: "7", name: "grid seven", description: "This is grid seven", editedBy: "Grace", lastEdited: "2024-06-07" },
+    { id: "8", name: "grid eight", description: "This is grid eight", editedBy: "Hank", lastEdited: "2024-06-08" },
+    { id: "9", name: "grid nine", description: "This is grid nine", editedBy: "Ivy", lastEdited: "2024-06-09" },
+    { id: "10", name: "grid ten", description: "This is grid ten", editedBy: "Jack", lastEdited: "2024-06-10" },
 ]
 
 export type GridInfo = {
     id: string
     name: string
+    description: string
     editedBy: string
     lastEdited: string
 }
@@ -52,24 +53,29 @@ export const columns: ColumnDef<GridInfo>[] = [
         enableSorting: true,
     },
     {
-        accessorKey: "editedBy",
-        header: () => <div className="text-right">Edited By</div>,
+        accessorKey: "description",
+        header: () => <div>Description</div>,
         cell: ({ row }) => {
-            <div className="capitalize">
-                Hi
+            return <div className="capitalize">{row.getValue("description")}</div>
+        }
+    },
+    {
+        accessorKey: "editedBy",
+        header: () => <div className="">Edited By</div>,
+        cell: ({ row }) => {
+            return <div className="capitalize flex items-center justify-start gap-2">
                 <Avatar className="user-avatar">
-                    <AvatarFallback>
-                    </AvatarFallback>
-                    {row.getValue("editedBy")}
+                    <AvatarFallback>US</AvatarFallback>
                 </Avatar>
+                {row.getValue("editedBy")}
             </div>
         },
     },
     {
         accessorKey: "lastEdited",
-        header: () => <div className="text-right">Last Edited</div>,
+        header: () => <div className="text">Last Edited</div>,
         cell: ({ row }) => {
-            <div className="capitalize">{row.getValue("lastEdited")}</div>
+            return <div className="capitalize flex items-center justify-start">{row.getValue("lastEdited")}</div>
         },
     },
     {
