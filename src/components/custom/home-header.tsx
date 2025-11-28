@@ -1,24 +1,33 @@
 import { Building2Icon, UserIcon, PlusIcon } from "lucide-react"
 import { Button } from "../ui/button"
 import Tutorial from "./tutorial/tutorial"
+import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog"
+import FindPeople from "./find-people/find-people"
 
 type Props = {}
 
-export default function HomeHeader({}: Props) {
-  return (
-    <div className="header-container flex flex-col gap-4">
-      <div className="main-header flex items-center justify-between mb-4">
-          <div className="welcome-container">
-              <h1 className="font-semibold">Welcome Back, User!</h1>
-              <p className="text-sm text-muted-foreground">Here's yours daily scoop on Bitscale!</p>
-          </div>
-          <div className="main-actions-container flex gap-4">
-              <Button variant="outline"><Building2Icon />Find Companies</Button>
-              <Button variant="outline"><UserIcon />Find People</Button>
-              <Button variant="default"><PlusIcon />New Grid</Button>
-          </div>
-      </div>
-      <Tutorial />
-    </div>
-  )
+export default function HomeHeader({ }: Props) {
+    return (
+        <div className="header-container flex flex-col gap-4">
+            <div className="main-header flex items-center justify-between mb-4">
+                <div className="welcome-container">
+                    <h1 className="font-semibold">Welcome Back, User!</h1>
+                    <p className="text-sm text-muted-foreground">Here's yours daily scoop on Bitscale!</p>
+                </div>
+                <div className="main-actions-container flex gap-4">
+                    <Button variant="outline"><Building2Icon />Find Companies</Button>
+                    <Dialog>
+                        <DialogTrigger asChild>
+                            <Button variant="outline"><UserIcon />Find People</Button>
+                        </DialogTrigger>
+                        <DialogContent className="min-w-[75vw]">
+                            <FindPeople />
+                        </DialogContent>
+                    </Dialog>
+                    <Button variant="default"><PlusIcon />New Grid</Button>
+                </div>
+            </div>
+            <Tutorial />
+        </div>
+    )
 }
