@@ -8,7 +8,7 @@ type Props = {}
 export default function FindPeopleSidebar({ }: Props) {
     return (
         <div className="find-people-sidebar w-1/4">
-            <div className="sidebar-title flex items-center justify-between mb-4">
+            <div className="sidebar-title flex max-md:flex-col gap-2 items-center justify-between mb-4">
                 <h2 className="font-bold text-lg">Find People</h2>
                 <DropdownMenu>
                     <DropdownMenuTrigger className="flex items-center bg-gray-200 rounded px-1 text-[0.6rem]">
@@ -33,11 +33,11 @@ export default function FindPeopleSidebar({ }: Props) {
                     <FilterAccordion />
                 </div>
             </div>
-            <div className="sidebar-footer flex gap-2 mt-6">
-                <Button variant="secondary" size="sm" className="w-1/2 text-xs px-1">
+            <div className="sidebar-footer flex max-md:flex-col gap-2 mt-6">
+                <Button variant="secondary" size="sm" className="max-md:w-full w-1/2 max-md:text-[0.5rem] text-xs px-1">
                     <FileSearchCornerIcon />Saved Search
                 </Button>
-                <Button variant="default" size="sm" className="w-1/2 text-xs px-1">
+                <Button variant="default" size="sm" className="max-md:w-full w-1/2 max-md:text-[0.5rem] text-xs px-1">
                     <EyeIcon />Preview Result
                 </Button>
             </div>
