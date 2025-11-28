@@ -5,7 +5,7 @@ type Props = {}
 
 export default function Home({ }: Props) {
     return (
-        <main className="main-content p-6 flex flex-col gap-6">
+        <main className="main-content p-6 flex flex-col gap-6 overflow-y-scroll overflow-x-hidden h-full">
             <HomeHeader />
             <GridListContainer />
         </main>

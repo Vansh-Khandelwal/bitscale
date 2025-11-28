@@ -1,22 +1,20 @@
 import './App.css'
-import { SidebarProvider, SidebarTrigger } from './components/ui/sidebar'
+import { SidebarProvider } from './components/ui/sidebar'
 import { AppSidebar } from './components/custom/sidebar/appSidebar'
 import Header from './components/custom/header'
 import Home from './pages/home'
 
 function App() {
 
-  return (
-    <>
-        <SidebarProvider>
-            <AppSidebar />
-            <div className="main-container w-full">
+    return (
+        <SidebarProvider className='overflow-hidden h-screen'>
+            <AppSidebar collapsible='none' />
+            <div className="main-container w-full overflow-hidden">
                 <Header />
                 <Home />
             </div>
         </SidebarProvider>
-    </>
-  )
+    )
 }
 
 export default App

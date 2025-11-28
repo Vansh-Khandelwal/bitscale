@@ -51,7 +51,7 @@ const data = {
             icon: LayoutDashboardIcon,
             items: [
                 {
-                    title: "History",
+                    title: "My Grids",
                     url: "#",
                 },
                 {
@@ -59,7 +59,7 @@ const data = {
                     url: "#",
                 },
                 {
-                    title: "Settings",
+                    title: "History",
                     url: "#",
                 },
             ],

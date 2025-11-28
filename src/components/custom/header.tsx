@@ -1,4 +1,3 @@
-import { Separator } from "@radix-ui/react-separator"
 import { Badge } from "../ui/badge"
 import { Avatar, AvatarFallback } from "../ui/avatar"
 

@@ -62,21 +62,12 @@ export type GridInfo = {
 export const columns: ColumnDef<GridInfo>[] = [
     {
         id: "select",
-        header: ({ table }) => (
-            <Checkbox
-                checked={
-                    table.getIsAllPageRowsSelected() ||
-                    (table.getIsSomePageRowsSelected() && "indeterminate")
-                }
-                onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-                aria-label="Select all"
-            />
-        ),
+        header: "",
         cell: ({ row }) => (
             <Checkbox
                 checked={row.getIsSelected()}
                 onCheckedChange={(value) => row.toggleSelected(!!value)}
-                aria-label="Select row"
+                aria-label="Starred row"
             />
         ),
         enableSorting: false,
@@ -84,7 +75,15 @@ export const columns: ColumnDef<GridInfo>[] = [
     },
     {
         accessorKey: "name",
-        header: "Name",
+        header: ({ column }) => (
+            <Button
+                variant="ghost"
+                onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            >
+                Name
+                <ArrowUpDown />
+            </Button>
+        ),
         cell: ({ row }) => (
             <div className="capitalize">{row.getValue("name")}</div>
         ),

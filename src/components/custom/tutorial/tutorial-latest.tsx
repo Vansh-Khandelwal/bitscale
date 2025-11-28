@@ -1,5 +1,4 @@
-import { Card, CardHeader, CardDescription, CardTitle, CardAction, CardFooter, CardContent } from "@/components/ui/card"
-import { Badge } from "lucide-react"
+import { Card, CardHeader, CardDescription, CardContent } from "@/components/ui/card"
 
 type Props = {}
 
