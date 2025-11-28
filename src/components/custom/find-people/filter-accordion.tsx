@@ -1,5 +1,5 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { BriefcaseBusinessIcon, GlobeIcon } from "lucide-react"
+import { Accordion, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { BriefcaseBusinessIcon, GlobeIcon, LocationEditIcon } from "lucide-react"
 
 type Props = {}
 
@@ -26,7 +26,11 @@ export default function FilterAccordion({ }: Props) {
                 </AccordionTrigger>
             </AccordionItem>
             <AccordionItem value="item-3">
-                <AccordionTrigger>Return Policy</AccordionTrigger>
+                <AccordionTrigger>
+                    <div className="accordion-title-container flex items-center gap-3 justify-start">
+                        <LocationEditIcon size="1rem" /> Person Location
+                    </div>
+                </AccordionTrigger>
             </AccordionItem>
         </Accordion>
     )
